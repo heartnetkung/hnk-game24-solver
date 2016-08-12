@@ -1,0 +1,22 @@
+{
+  "name": "hnk-game24-solver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/jasmine-node/lib/jasmine-node/cli.js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heartnetkung/hnk-game24-solver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heartnetkung/hnk-game24-solver/issues"
+  },
+  "homepage": "https://github.com/heartnetkung/hnk-game24-solver#readme",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
