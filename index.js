@@ -12,7 +12,8 @@ exports.solve = function(intArray) {
 						continue;
 					temp = solveCase1(intArray[i], intArray[j], intArray[k], intArray[l]);
 					temp2 = solveCase2(intArray[i], intArray[j], intArray[k], intArray[l]);
-					solutions = solutions.concat(temp, temp2);
+					temp3 = solveCase3(intArray[i], intArray[j], intArray[k], intArray[l]);
+					solutions = solutions.concat(temp, temp2, temp3);
 				}
 
 	var keys = {};
@@ -52,6 +53,20 @@ var solveCase2 = function(a, b, c, d) {
 					});
 	return ans;
 };
+
+//a.(b.(c.d))
+var solveCase3 = function(a, b, c, d) {
+	var ans = [];
+	for (var i = 0, ii = OPS.length; i < ii; i++)
+		for (var j = 0, jj = OPS.length; j < jj; j++)
+			for (var k = 0, kk = OPS.length; k < kk; k++)
+				if (OPS[k](a, OPS[j](b, OPS[i](c, d))) === 24)
+					ans.push({
+						results: [a, OPS[k], '(', b, OPS[j], '(', c, OPS[i], d, ')', ')'].join(''),
+						ops: [i, j, k].sort().join('')
+					});
+	return ans;
+}
 
 var OPS = [function(a, b) {
 	return a + b;
